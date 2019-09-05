@@ -1,8 +1,8 @@
-package ProgrammingQA;
+package PatternProg;
 
 import java.util.Scanner;
 
-public class PatternPrograms {
+public class Patterns {
 	  
 	public static void main(String args[]){    
 		//pattern();
