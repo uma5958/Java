@@ -9,8 +9,12 @@ public class FirstNonRepeatedCharacter {
 	public static void main(String[] args) {
 		String str = "swiss";
 		//String str = "Programming";
+	
 		char arr[] = str.toCharArray();
 		Map<Character, Integer> map = new LinkedHashMap<Character, Integer>();
+		
+		/*
+		// Using for loop
 		int count = 1;
 		for (int i = 0; i < arr.length; i++) {
 			if (!map.containsKey(arr[i])) {
@@ -26,6 +30,26 @@ public class FirstNonRepeatedCharacter {
 				break;
 			}
 		}
+		*/
+		
+		// Using for-each loop
+		for(Character c : arr) {
+			Integer count = map.get(c);
+			if (count == null) {
+				map.put(c, 1);
+			} else {
+				map.put(c, ++count);
+			}
+		}
+		
+		for(Character key :map.keySet()) {
+			if(map.get(key)==1) {
+				System.out.println("First non-repeated character is: "+key);
+				break;
+			}
+		}
+		
 	}
 
+	
 }
